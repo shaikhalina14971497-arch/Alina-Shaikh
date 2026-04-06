@@ -1,0 +1,16 @@
+// Image zoom on click
+document.querySelectorAll(".gallery-item img").forEach(img => {
+img.addEventListener("click", () => {
+const popup = document.createElement("div");
+popup.classList.add("popup");
+
+popup.innerHTML = `
+    <span class="close">&times;</span>
+    <img src="${img.src}">
+`;
+
+document.body.appendChild(popup);
+
+popup.querySelector(".close").onclick = () => popup.remove();
+});
+});
